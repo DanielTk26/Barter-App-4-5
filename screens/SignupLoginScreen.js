@@ -276,6 +276,16 @@ export default class SignupLoginScreen extends React.Component {
                 SIGN UP
               </Text>
             </TouchableOpacity>
+// Log out
+<TouchableOpacity style={styles.logoutButton}
+  onPress= {() =>{
+    this.props.navigation.navigate('SignupLoginScreen')
+    firebase.auth.signOut()
+  }}>
+    <Text>Log Out</Text>
+  </TouchableOpacity>
+//Log out end
+
           </View>
         </View>
       </View>
@@ -348,6 +358,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     marginTop: 30,
+  },
+  logoutButton:{
+    width: 200,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    borderRadius: 10,
+    marginTop: 9,
   },
   signButtonText: {
     color: "black",
